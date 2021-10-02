@@ -1,31 +1,43 @@
-const express = require('express')
-// const { restart } = require('nodemon')
-const nunjucks = require('nunjucks')
-const routes = express.Router()
-const teachers = require('./teachers')
+const express = require('express');
+const routes = express.Router();
+const dogs = require('./controllers/dogs')
+const owners = require('./controllers/owners')
+
+routes.get("/", dogs.index)
+
+routes.get("/dogs", dogs.index)
+
+routes.get("/dogs/create", dogs.create)
+
+routes.get("/dogs/:id", dogs.show)
+
+routes.get("/dogs/:id/edit", dogs.edit)
+
+routes.post("/dogs", dogs.post)
+
+routes.put("/dogs", dogs.put)
+
+routes.delete("/dogs", dogs.delete)
 
 
-routes.get('/', function(req,res){
-    return res.redirect('/teachers')
+
+routes.get("/", function(req,res){
+    return res.render("layout")
 })
 
-routes.get('/teachers',function(req,res){
-    return res.render('teachers/index')
-})
+routes.get("/owners", owners.index)
 
-routes.get('/teachers/create',function(req,res){
-    return res.render('teachers/create')
-})
+routes.get("/owners/create", owners.create)
 
-routes.get('/teachers/:id', teachers.show)
+routes.get("/owners/:id", owners.show)
 
-routes.get('/teachers/:id/edit', teachers.edit)
+routes.get("/owners/:id/edit", owners.edit)
 
-routes.post('/teachers',teachers.post)
+routes.post("/owners", owners.post)
 
-routes.put('/teachers', teachers.put) /* 27/08 primeiro passo pro Put*/
+routes.put("/owners", owners.put)
 
-routes.delete('/teachers', teachers.delete)
+routes.delete("/owners", owners.delete)
 
 
-module.exports = routes /*  middleware */
+module.exports = routes;
