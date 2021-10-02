@@ -1,194 +1,193 @@
-@import "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap";
-
-@import 'https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400;700&family=Odibee+Sans&display=swap';
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
+:root {
+    --primary-color: rgb(211, 211, 211);
+    --secondary-color: rgb(184, 184, 184);
+    --terciary-color: #D08692;
+}
 
 * {
-	margin: 0;
-	padding:0;
-	border: none;
-}
-:root {
-	--primary-color: #743235;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-	background:var(--primary-color);
-	font-family: 'Roboto', sans-serif;
+body{
+    font-family: 'Poppins',sans-serif;
+    background-color:var(--secondary-color);
 }
 
-header{
-	padding:32px;
-	width: 100%;
-	background-color: white;
-	box-sizing: border-box;
-	text-align: center;
+nav {
+    text-align: center;
+    background-color:var(--primary-color);
+    width: 100%;
+    padding: 32px;
 }
 
-.links {
-	font-size: 22px;
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-left: 32px;
+    font-size: 18px;
+    color: rgb(255, 253, 253);
+    font-weight: bold;
 }
 
-.links a + a{
-	margin-left: 32px;
-}
-
-.links a{
-	text-decoration: none;
-	color: #777;
-	position: relative;
-}
-
-.links a.active{
-	font-weight: bold;
-	color:var(--primary-color);
-}
-
-.links a::after{
-	content: "";
-	width: 0px;
-	height: 2px;
-	background-color: var(--primary-color);
-	position: absolute;
-	left:0;
-	bottom:-2px;
-}
-
-.links a:hover::after{
-	width: 100%;
-	transition: width 180ms ease-in-out 100ms;
-	
-}
-
-.card {
-	width: 600px;
-	min-height: 300px; /*Importante na construcao com box*/
-	background-color: white;
-	
-	/* espacamento e alinhamento ao centro*/
-	margin: 45px auto;
-	
-	/* grid que divide a div ao meio */
-	display:grid;
-	grid-template-columns: 1fr 1fr;
-
-	/* configuracao da sombra do box*/
-	box-shadow: 15px 15px 30px -1px #1E2023;
-
-	animation: subindo 400ms ease-in-out;
+nav a:hover{
+    font-weight: bold;
+    color:var(--terciary-color)
 
 }
 
-@keyframes subindo {
-	from{
-		/* Opacidade faz "piscar"*/
-		opacity: 0;
-		/**/
-		transform: translateY(25px);
-	}
-	to{
-		opacity: 1;
-	}
+nav a:nth-child(1){
+    margin-left: 0;
 }
+
+.card{
+    width: 1000px;
+    min-height: 600px;
+    background-color: white;
+    margin: 32px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.2);
+    animation: comesDown 1s ease;
+}
+
+.avatar{
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    animation: comesUp 1s ease;
+    animation-delay: 2s;
+
+}
+
+
+@keyframes comesDown {
+    from {
+        opacity: 0;
+        transform: translateY(-64px);
+
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes comesUp {
+    from {
+        opacity: 0;
+        transform: translateY(32px);
+
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 
 .details {
-	padding: 20px;
+    padding: 16px;
 }
-.details .item {
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-	padding:16px 0;
+
+.details .item{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.205);
+    padding: 16px 0;
 }
 
 .details .item:last-child{
-	border-bottom: none;
+    border-bottom: none;
 }
 
-.details .item:nth-child(7) {
-	border-bottom: none;
+.details .item div:first-child, h3{
+    color:rgba(128, 128, 128, 0.6);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.7px;
 }
 
-
-
-.details .item div:nth-child(1),h3{
-	font-weight: bold;
-	font-size: 14px;
-	font-weight: normal;
-	letter-spacing: 1;
-	line-height: 20px;
-	color: #777;
-
-	
+h3{
+    font-weight: bold;
+    color: var(--terciary-color);
+    font-size: 16px;
 }
+
 .details .item div:nth-child(2){
-	font-size: 16px;
-	font-weight: bold;
-	color: #555;
-}
-
-.details h3{
-	text-transform: uppercase;
-	font-weight: bold;
-	color:var(--primary-color)
-}
-
-.details .item span{
-	background-color:orange;
-	border-radius: 32px;
-	color:#555;
-	margin-top:8px;
-	margin-right: 4px;
-	display: inline-block;
-	padding: 8px 16px;
-	font-size: 12px;	
-	text-transform: uppercase;
+    font-weight: 400;
+    color: grey;
 }
 
 
-/* Formulario */
-
-input,select,button,a.button {
-	width:100%;
-	font-size: 16px;
-	font-weight: bold;
-	color: #555;
-	text-decoration: none;
-}
-
-input::placeholder, select{
-	font-weight: normal;
-}
-
-input[type="radio"]{
-	width: initial;
-	margin-right: 4px;
-}
-
-input[type="date"]{
-	font-weight: normal;
-
+.details span{
+    padding: 8px 12px;
+    background-color: #6AA18B;
+    color:whitesmoke;
+    display: inline-block;
+    margin: 2px 0;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
 }
 
 
-button[type="submit"],a.button{
-	background-color: orange;
-	padding: 20px 30px;
-	margin-top:8px;
-	width: 100%;
+/* Cards page */
 
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
 }
 
-.editButtons{
-
-
+.movie {
+    width: 280px;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+.container{
+    margin: 32px auto;
+    width: 95%;
+    min-height: 1000px;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+}
+.little-card{
+        width: 250px;
+        height: 350px;
+        margin: 8px;
+        background-color: var(--secondary-color);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        border-radius: 3px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
 }
 
-#form-delete{
-	background-color: coral;
-	margin-top:8px;
-
+.card-avatar{
+    width:100%;
 }
 
+.card-avatar img{
+    width: 100%;
+    
+}
 
-
-
+.card-details{
+    width: 50%;
+}
 

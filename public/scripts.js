@@ -1,20 +1,29 @@
-const modalOverlay = document.querySelector('.modal-overlay') // seleciona obejtos do modal-overlay
-const cards = document.querySelectorAll('.card') //seleciona todos os objetos cuja classe é .card
+// selecting an object (a class) called .modalOverlay
+const modalOverlay = document.querySelector('.modalOverlay');
+const modal = document.querySelector('.modal');
 
-for (let card of cards){
-	card.addEventListener("click",function(){
-		const pageId = card.getAttribute("id");
-		modalOverlay.classList.add("active");
-		modalOverlay.querySelector("iframe").src = `https://www.rocketseat.com.br/${pageId}`
-	});
+// selecting every object named .card using querySelectorALL
+const cards = document.querySelectorAll('.card');
+
+
+for (let card of cards) {
+    card.addEventListener('click', function() {
+        const pageId = card.getAttribute("id");
+        window.location.href = `/course?id=${pageId}`
+
+
+    })
 }
 
 
-document.querySelector('.close-modal').addEventListener('click',function(){
-	modalOverlay.classList.remove('active');
-	modalOverlay.querySelector("iframe").src = ""
-
-});
 
 
 
+
+// document.querySelector('.maximizeModal').addEventListener('click', function() {
+//     if (modal.classList.contains('maximize')) {
+//         modal.classList.remove('maximize')
+//     } else {
+//         modal.classList.add('maximize')
+//     }
+// })
