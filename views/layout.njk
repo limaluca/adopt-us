@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    {% block head %}
-    <title>Get your doggy!</title>
-    {% endblock %}
+    <head>
+        {% block head %}
+        <title>Get your doggy!</title>
+        {% endblock %}
 
-    <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/styles.css">
 
-</head>
+    </head>
 
-<body>
-    <header>
-        <nav>
-            <a href="/dogs">Animais</a>
-            <a href="/owners">Futuros Donos</a>
-        </nav>
-    </header>
-    <div class="wrapped">
-        {% block content%} {% endblock %}
+    <body>
+        <header>
+            <nav>
+                <a id="nav" href="/dogs">Animais</a>
+                <a id="nav" href="/owners">Futuros Donos</a>
+            </nav>
+        </header>
+        <div class="wrapped">
+            {% block content%} {% endblock %}
 
-    </div>
+        </div>
 
 
-{% block footer%} {% endblock%}
+    {% block footer%} {% endblock%}
 
-</body>
+    </body>
+    <script src="scripts.js"></script>
+
 <!-- target="_blank" -->
-
 </html>
