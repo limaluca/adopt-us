@@ -1,16 +1,17 @@
 {
-  "owners": [],
-  "dogs": [
+  "owners": [
     {
-      "id": "1",
-      "avatar_url": "https://source.unsplash.com/collection/1925797/900x900",
-      "name": "Jenifer",
+      "id": 1,
+      "avatar_url": "https://thispersondoesnotexist.com/image",
+      "name": "Joanna",
       "species": "dog",
-      "sex": "male",
-      "age": "puppy",
-      "size": "big",
-      "highlights": "oaks, aoks,ss,asas"
-    },
+      "sex": "female",
+      "age": "adult",
+      "size": "short",
+      "highlights": "one,two,three"
+    }
+  ],
+  "dogs": [
     {
       "id": "2",
       "avatar_url": "https://source.unsplash.com/collection/8717673/900x900",
@@ -22,14 +23,14 @@
       "highlights": "oaks, aoks,ss,asas"
     },
     {
-      "id": "3",
-      "avatar_url": "https://source.unsplash.com/collection/1565939/900x900",
-      "name": "Donna",
-      "species": "dog",
+      "id": 4,
+      "avatar_url": "https://www.seucrime.com",
+      "name": "ksidj",
+      "species": "cat",
       "sex": "male",
       "age": "puppy",
-      "size": "big",
-      "highlights": "oaks, aoks,ss,asas"
+      "size": "short",
+      "highlights": "sdfs,dsfs"
     }
   ]
 }
