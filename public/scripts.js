@@ -1,11 +1,10 @@
-const currentLocation = location.pathname
+const currentPage = location.pathname;
+const navAnchors = document.querySelectorAll("header .links a");
 
-const navigationAnchors = document.querySelectorAll("#nav");
 
-console.log(currentLocation)
-if(currentLocation=='/dogs'){
-    navigationAnchors[0].style.fontWeight = 'bold'
-} else {
-    navigationAnchors[1].style.fontWeight = 'bold'
 
+for (item of navAnchors) {
+    if (currentPage.includes(item.getAttribute("href"))) {
+        item.classList.add("active")
+    }
 }

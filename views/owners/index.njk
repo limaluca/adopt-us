@@ -2,15 +2,16 @@
 
 {% block content %}
     <div class="container">
-        {% for dog in dogs %}
+        <a href="/owners/create">criar</a>
+        {% for owner in owners %}
             <div class="little-card">
                 <div class="card-avatar">
-                    <img src="{{dog.avatar_url}}" alt="animal photo">
+                    <img src="{{owner.avatar_url}}" alt="animal photo">
                 </div>
                 <div class="card-details">
-                    <h2>{{dog.name}}</h2>
-                    <small>{{dog.size}}</small><br>
-                    <a href="dogs/{{dog.id}}">Ver mais</a>
+                    <h2>{{owner.name}}</h2>
+                    <small>{{owner.size}}</small><br>
+                    <a href="owners/{{owner.id}}">Ver mais</a>
                 </div>
             </div>  
         {% endfor %}
